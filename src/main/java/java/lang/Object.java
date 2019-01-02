@@ -33,6 +33,9 @@ package java.lang;
  * @author  unascribed
  * @see     Class
  * @since   JDK1.0
+ * Object类是类继承结构的根。
+ * 每一个类都有Object类作为超类（父类），
+ * 所有的类，包括数组，都实现了这个的方法。
  */
 public class Object {
 
