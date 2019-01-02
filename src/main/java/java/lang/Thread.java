@@ -136,6 +136,10 @@ import sun.security.util.SecurityConstants;
  * @see     #run()
  * @see     #stop()
  * @since   JDK1.0
+ * Thread
+ * 线程是操作系统能够进行调度运算的最小单位，简单来说，线程是程序的执行者，程序中的每一个代码，
+ * 每一个方法都必须都有一个线程去执行。
+ * Java虚拟机允许程序多线程运行
  */
 public
 class Thread implements Runnable {
