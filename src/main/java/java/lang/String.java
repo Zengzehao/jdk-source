@@ -111,9 +111,11 @@ import java.util.regex.PatternSyntaxException;
 public final class String
     implements java.io.Serializable, Comparable<String>, CharSequence {
     /** The value is used for character storage. */
+    /** 字符数组 */
     private final char value[];
 
     /** Cache the hash code for the string */
+    /** 缓存hashcode*/
     private int hash; // Default to 0
 
     /** use serialVersionUID from JDK 1.0.2 for interoperability */
@@ -618,6 +620,7 @@ public final class String
      *
      * @return  the length of the sequence of characters represented by this
      *          object.
+     * 长度
      */
     public int length() {
         return value.length;
@@ -630,6 +633,7 @@ public final class String
      * {@code false}
      *
      * @since 1.6
+     * 是不是为空，就是长度是不是为0
      */
     public boolean isEmpty() {
         return value.length == 0;
@@ -652,6 +656,7 @@ public final class String
      * @exception  IndexOutOfBoundsException  if the {@code index}
      *             argument is negative or not less than the length of this
      *             string.
+     * 通过下标取出char
      */
     public char charAt(int index) {
         if ((index < 0) || (index >= value.length)) {
@@ -778,6 +783,7 @@ public final class String
     /**
      * Copy characters from this string into dst starting at dstBegin.
      * This method doesn't perform any range checking.
+     * 从这个string复制characters
      */
     void getChars(char dst[], int dstBegin) {
         System.arraycopy(value, 0, dst, dstBegin, value.length);
@@ -953,6 +959,7 @@ public final class String
      * @return  The resultant byte array
      *
      * @since      JDK1.1
+     * 转化为字节数组
      */
     public byte[] getBytes() {
         return StringCoding.encode(value, 0, value.length);
@@ -972,6 +979,7 @@ public final class String
      *
      * @see  #compareTo(String)
      * @see  #equalsIgnoreCase(String)
+     * 判断两个字符串是否相等
      */
     public boolean equals(Object anObject) {
         if (this == anObject) {
@@ -1101,6 +1109,7 @@ public final class String
      *          false} otherwise
      *
      * @see  #equals(Object)
+     * 比较两个字符串是否相等忽略大小写
      */
     public boolean equalsIgnoreCase(String anotherString) {
         return (this == anotherString) ? true
@@ -1429,6 +1438,7 @@ public final class String
      *          {@code String} object as determined by the
      *          {@link #equals(Object)} method.
      * @since   1. 0
+     * 字符串是否以什么开始
      */
     public boolean startsWith(String prefix) {
         return startsWith(prefix, 0);
@@ -1444,6 +1454,7 @@ public final class String
      *          result will be {@code true} if the argument is the
      *          empty string or is equal to this {@code String} object
      *          as determined by the {@link #equals(Object)} method.
+     * 字符串是否以什么结束
      */
     public boolean endsWith(String suffix) {
         return startsWith(suffix, value.length - suffix.value.length);
@@ -1498,6 +1509,7 @@ public final class String
      * @return  the index of the first occurrence of the character in the
      *          character sequence represented by this object, or
      *          {@code -1} if the character does not occur.
+     * 字符在该字符串中的下标
      */
     public int indexOf(int ch) {
         return indexOf(ch, 0);
@@ -1606,6 +1618,7 @@ public final class String
      * @return  the index of the last occurrence of the character in the
      *          character sequence represented by this object, or
      *          {@code -1} if the character does not occur.
+     * 该字符在该字符串中最后一个匹配的下标，没有则返回-1
      */
     public int lastIndexOf(int ch) {
         return lastIndexOf(ch, value.length - 1);
@@ -1921,6 +1934,7 @@ public final class String
      * @exception  IndexOutOfBoundsException  if
      *             {@code beginIndex} is negative or larger than the
      *             length of this {@code String} object.
+     * 截断字符串，beginIndex，
      */
     public String substring(int beginIndex) {
         if (beginIndex < 0) {
@@ -1954,6 +1968,8 @@ public final class String
      *             this {@code String} object, or
      *             {@code beginIndex} is larger than
      *             {@code endIndex}.
+     * endIndex - beginIndex = 新的字符串的长度
+     * "abcefg".substring(0,4) = "abce"
      */
     public String substring(int beginIndex, int endIndex) {
         if (beginIndex < 0) {
@@ -2022,6 +2038,7 @@ public final class String
      *                of this {@code String}.
      * @return  a string that represents the concatenation of this object's
      *          characters followed by the string argument's characters.
+     * 连接字符串
      */
     public String concat(String str) {
         int otherLen = str.length();
@@ -2062,6 +2079,7 @@ public final class String
      * @param   newChar   the new character.
      * @return  a string derived from this string by replacing every
      *          occurrence of {@code oldChar} with {@code newChar}.
+     * 替换字符串
      */
     public String replace(char oldChar, char newChar) {
         if (oldChar != newChar) {
@@ -2069,16 +2087,20 @@ public final class String
             int i = -1;
             char[] val = value; /* avoid getfield opcode */
 
+            // 先遍历看看旧的字符在不在这个字符串中
             while (++i < len) {
                 if (val[i] == oldChar) {
                     break;
                 }
             }
             if (i < len) {
+                // 创建一个字符数组
                 char buf[] = new char[len];
+                // 给前面的赋值
                 for (int j = 0; j < i; j++) {
                     buf[j] = val[j];
                 }
+                // 这会一直遍历啊,替换所有
                 while (i < len) {
                     char c = val[i];
                     buf[i] = (c == oldChar) ? newChar : c;
@@ -2116,6 +2138,7 @@ public final class String
      *
      * @since 1.4
      * @spec JSR-51
+     * 匹配
      */
     public boolean matches(String regex) {
         return Pattern.matches(regex, this);
@@ -2128,6 +2151,7 @@ public final class String
      * @param s the sequence to search for
      * @return true if this string contains {@code s}, false otherwise
      * @since 1.5
+     * 包含
      */
     public boolean contains(CharSequence s) {
         return indexOf(s.toString()) > -1;
@@ -2828,6 +2852,7 @@ public final class String
      * <p>
      * @return  the {@code String}, converted to uppercase.
      * @see     String#toUpperCase(Locale)
+     * 转为大写
      */
     public String toUpperCase() {
         return toUpperCase(Locale.getDefault());
@@ -2863,6 +2888,7 @@ public final class String
      * @return  A string whose value is this string, with any leading and trailing white
      *          space removed, or this string if it has no leading or
      *          trailing white space.
+     * 去掉空格
      */
     public String trim() {
         int len = value.length;
