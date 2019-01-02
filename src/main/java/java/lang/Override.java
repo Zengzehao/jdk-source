@@ -32,6 +32,7 @@ import java.lang.annotation.*;
  * method declaration in a supertype. If a method is annotated with
  * this annotation type compilers are required to generate an error
  * message unless at least one of the following conditions hold:
+ * 表明一个方法声明是覆盖父类的方法声明
  *
  * <ul><li>
  * The method does override or implement a method declared in a
@@ -45,6 +46,7 @@ import java.lang.annotation.*;
  * @author  Joshua Bloch
  * @jls 9.6.1.4 @Override
  * @since 1.5
+ * 标记接口
  */
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.SOURCE)
