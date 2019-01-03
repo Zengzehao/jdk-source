@@ -30,10 +30,12 @@ import java.util.Arrays;
 
 /**
  * A mutable sequence of characters.
+ * 一个易变的字符序列
  * <p>
  * Implements a modifiable string. At any point in time it contains some
  * particular sequence of characters, but the length and content of the
  * sequence can be changed through certain method calls.
+ * 实现可修改的字符串。在任何时候它都包含一些特定的字符序列，但长度和内容可以被改变通过某些方法调用。
  *
  * <p>Unless otherwise noted, passing a {@code null} argument to a constructor
  * or method in this class will cause a {@link NullPointerException} to be
@@ -47,6 +49,7 @@ import java.util.Arrays;
 abstract class AbstractStringBuilder implements Appendable, CharSequence {
     /**
      * The value is used for character storage.
+     * 字符数组
      */
     char[] value;
 
