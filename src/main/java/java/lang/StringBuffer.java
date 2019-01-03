@@ -33,6 +33,8 @@ import java.util.Arrays;
  * point in time it contains some particular sequence of characters, but
  * the length and content of the sequence can be changed through certain
  * method calls.
+ * 一个线程安全的，易变的字符序列。
+ * StringBuffer像是一个String，但是可以被修改。
  * <p>
  * String buffers are safe for use by multiple threads. The methods
  * are synchronized where necessary so that all the operations on any
