@@ -72,6 +72,7 @@ package java.lang;
  * @see         StringBuffer
  * @see         String
  * @since       1.5
+ * StringBuilder是线程不安全的
  */
 public final class StringBuilder
     extends AbstractStringBuilder
