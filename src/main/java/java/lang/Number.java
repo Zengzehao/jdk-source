@@ -51,6 +51,7 @@ package java.lang;
  * @jls 5.1.2 Widening Primitive Conversions
  * @jls 5.1.3 Narrowing Primitive Conversions
  * @since   JDK1.0
+ * Number是一个表示数字的抽象类，可以将包装类型转化为原始类型
  */
 public abstract class Number implements java.io.Serializable {
     /**
