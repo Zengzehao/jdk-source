@@ -6,7 +6,8 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="jdk-source" />
+        <module name="jdk-source-analysis" />
+        <module name="jdk-source-test" />
       </profile>
     </annotationProcessing>
   </component>

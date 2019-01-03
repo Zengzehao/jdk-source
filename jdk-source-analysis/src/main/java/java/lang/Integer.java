@@ -53,12 +53,14 @@ public final class Integer extends Number implements Comparable<Integer> {
     /**
      * A constant holding the minimum value an {@code int} can
      * have, -2<sup>31</sup>.
+     * 最小值
      */
     @Native public static final int   MIN_VALUE = 0x80000000;
 
     /**
      * A constant holding the maximum value an {@code int} can
      * have, 2<sup>31</sup>-1.
+     * 最大值
      */
     @Native public static final int   MAX_VALUE = 0x7fffffff;
 
@@ -67,6 +69,7 @@ public final class Integer extends Number implements Comparable<Integer> {
      * {@code int}.
      *
      * @since   JDK1.1
+     * 类型
      */
     @SuppressWarnings("unchecked")
     public static final Class<Integer>  TYPE = (Class<Integer>) Class.getPrimitiveClass("int");
@@ -834,10 +837,10 @@ public final class Integer extends Number implements Comparable<Integer> {
 
     /**
      * The value of the {@code Integer}.
-     *
+     * final修饰，通过构造函数初始化后就不能被修改类
      * @serial
      */
-    private final int value;
+    private final int value; //
 
     /**
      * Constructs a newly allocated {@code Integer} object that
