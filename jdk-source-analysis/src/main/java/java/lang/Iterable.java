@@ -41,12 +41,14 @@ import java.util.function.Consumer;
  *
  * @since 1.5
  * @jls 14.14.2 The enhanced for statement
+ * 表示可迭代的
  */
 public interface Iterable<T> {
     /**
      * Returns an iterator over elements of type {@code T}.
      *
      * @return an Iterator.
+     * 返回迭代器
      */
     Iterator<T> iterator();
 

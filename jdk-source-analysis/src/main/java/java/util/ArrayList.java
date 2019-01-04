@@ -844,8 +844,11 @@ public class ArrayList<E> extends AbstractList<E>
      * An optimized version of AbstractList.Itr
      */
     private class Itr implements Iterator<E> {
+        // 游标变量，为了下一个元素
         int cursor;       // index of next element to return
+        // 上个元素返回的下标
         int lastRet = -1; // index of last element returned; -1 if no such
+        // expectedModCount期望，检查迭代器遍历时List是否被修改
         int expectedModCount = modCount;
 
         Itr() {}

@@ -50,6 +50,7 @@ import java.util.function.Consumer;
  * @see ListIterator
  * @see Iterable
  * @since 1.2
+ * 迭代器
  */
 public interface Iterator<E> {
     /**
@@ -58,6 +59,7 @@ public interface Iterator<E> {
      * return an element rather than throwing an exception.)
      *
      * @return {@code true} if the iteration has more elements
+     * 是否有下一个元素
      */
     boolean hasNext();
 
@@ -66,6 +68,7 @@ public interface Iterator<E> {
      *
      * @return the next element in the iteration
      * @throws NoSuchElementException if the iteration has no more elements
+     * 返回下一个元素
      */
     E next();
 
@@ -88,6 +91,7 @@ public interface Iterator<E> {
      *         yet been called, or the {@code remove} method has already
      *         been called after the last call to the {@code next}
      *         method
+     *         移除元素
      */
     default void remove() {
         throw new UnsupportedOperationException("remove");
