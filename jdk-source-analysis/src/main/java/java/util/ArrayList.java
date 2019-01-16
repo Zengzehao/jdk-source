@@ -104,6 +104,12 @@ import sun.misc.SharedSecrets;
  * @since   1.2
  */
 
+/**
+ * 实现接口RandomAccess，代表是可随机访问的，也就是可以通过下标获取
+ * 实现接口Cloneable，可克隆的
+ * 实现接口java.io.Serializable，可序列化的
+ * @param <E>
+ */
 public class ArrayList<E> extends AbstractList<E>
         implements List<E>, RandomAccess, Cloneable, java.io.Serializable
 {
@@ -111,11 +117,13 @@ public class ArrayList<E> extends AbstractList<E>
 
     /**
      * Default initial capacity.
+     * 默认的长度
      */
     private static final int DEFAULT_CAPACITY = 10;
 
     /**
      * Shared empty array instance used for empty instances.
+     * 默认的元素数组
      */
     private static final Object[] EMPTY_ELEMENTDATA = {};
 
@@ -123,6 +131,7 @@ public class ArrayList<E> extends AbstractList<E>
      * Shared empty array instance used for default sized empty instances. We
      * distinguish this from EMPTY_ELEMENTDATA to know how much to inflate when
      * first element is added.
+     *
      */
     private static final Object[] DEFAULTCAPACITY_EMPTY_ELEMENTDATA = {};
 
@@ -131,6 +140,7 @@ public class ArrayList<E> extends AbstractList<E>
      * The capacity of the ArrayList is the length of this array buffer. Any
      * empty ArrayList with elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA
      * will be expanded to DEFAULT_CAPACITY when the first element is added.
+     * 对象数组
      */
     transient Object[] elementData; // non-private to simplify nested class access
 
@@ -138,6 +148,7 @@ public class ArrayList<E> extends AbstractList<E>
      * The size of the ArrayList (the number of elements it contains).
      *
      * @serial
+     * 长度
      */
     private int size;
 
@@ -147,9 +158,11 @@ public class ArrayList<E> extends AbstractList<E>
      * @param  initialCapacity  the initial capacity of the list
      * @throws IllegalArgumentException if the specified initial capacity
      *         is negative
+     * 构造函数
      */
     public ArrayList(int initialCapacity) {
         if (initialCapacity > 0) {
+            // 初始化对象数组，但未实例化
             this.elementData = new Object[initialCapacity];
         } else if (initialCapacity == 0) {
             this.elementData = EMPTY_ELEMENTDATA;
@@ -173,9 +186,12 @@ public class ArrayList<E> extends AbstractList<E>
      *
      * @param c the collection whose elements are to be placed into this list
      * @throws NullPointerException if the specified collection is null
+     * 通过一个集合，创建一个ArrayList
      */
     public ArrayList(Collection<? extends E> c) {
+        // 转为数组对象
         elementData = c.toArray();
+        // 把长度赋值为size，并且判断为不为空
         if ((size = elementData.length) != 0) {
             // c.toArray might (incorrectly) not return Object[] (see 6260652)
             if (elementData.getClass() != Object[].class)
@@ -206,6 +222,7 @@ public class ArrayList<E> extends AbstractList<E>
      * specified by the minimum capacity argument.
      *
      * @param   minCapacity   the desired minimum capacity
+     * 保证容量
      */
     public void ensureCapacity(int minCapacity) {
         int minExpand = (elementData != DEFAULTCAPACITY_EMPTY_ELEMENTDATA)
@@ -220,6 +237,12 @@ public class ArrayList<E> extends AbstractList<E>
         }
     }
 
+    /**
+     * 计算容量
+     * @param elementData
+     * @param minCapacity
+     * @return
+     */
     private static int calculateCapacity(Object[] elementData, int minCapacity) {
         if (elementData == DEFAULTCAPACITY_EMPTY_ELEMENTDATA) {
             return Math.max(DEFAULT_CAPACITY, minCapacity);
@@ -231,11 +254,16 @@ public class ArrayList<E> extends AbstractList<E>
         ensureExplicitCapacity(calculateCapacity(elementData, minCapacity));
     }
 
+    /**
+     * 动态扩展容量
+     * @param minCapacity
+     */
     private void ensureExplicitCapacity(int minCapacity) {
         modCount++;
 
         // overflow-conscious code
         if (minCapacity - elementData.length > 0)
+            // 动态扩展容量
             grow(minCapacity);
     }
 
@@ -252,6 +280,7 @@ public class ArrayList<E> extends AbstractList<E>
      * number of elements specified by the minimum capacity argument.
      *
      * @param minCapacity the desired minimum capacity
+     * 扩容
      */
     private void grow(int minCapacity) {
         // overflow-conscious code
@@ -310,6 +339,7 @@ public class ArrayList<E> extends AbstractList<E>
      * More formally, returns the lowest index <tt>i</tt> such that
      * <tt>(o==null&nbsp;?&nbsp;get(i)==null&nbsp;:&nbsp;o.equals(get(i)))</tt>,
      * or -1 if there is no such index.
+     * 元素的下标
      */
     public int indexOf(Object o) {
         if (o == null) {
@@ -330,6 +360,7 @@ public class ArrayList<E> extends AbstractList<E>
      * More formally, returns the highest index <tt>i</tt> such that
      * <tt>(o==null&nbsp;?&nbsp;get(i)==null&nbsp;:&nbsp;o.equals(get(i)))</tt>,
      * or -1 if there is no such index.
+     * 元素最后一个下标
      */
     public int lastIndexOf(Object o) {
         if (o == null) {
@@ -349,6 +380,7 @@ public class ArrayList<E> extends AbstractList<E>
      * elements themselves are not copied.)
      *
      * @return a clone of this <tt>ArrayList</tt> instance
+     * 克隆
      */
     public Object clone() {
         try {
@@ -375,6 +407,7 @@ public class ArrayList<E> extends AbstractList<E>
      *
      * @return an array containing all of the elements in this list in
      *         proper sequence
+     * 转为数组对象
      */
     public Object[] toArray() {
         return Arrays.copyOf(elementData, size);
@@ -428,6 +461,7 @@ public class ArrayList<E> extends AbstractList<E>
      * @param  index index of the element to return
      * @return the element at the specified position in this list
      * @throws IndexOutOfBoundsException {@inheritDoc}
+     * 获取元素
      */
     public E get(int index) {
         rangeCheck(index);
@@ -443,6 +477,7 @@ public class ArrayList<E> extends AbstractList<E>
      * @param element element to be stored at the specified position
      * @return the element previously at the specified position
      * @throws IndexOutOfBoundsException {@inheritDoc}
+     * 设置新元素，并返回老元素
      */
     public E set(int index, E element) {
         rangeCheck(index);
@@ -457,8 +492,10 @@ public class ArrayList<E> extends AbstractList<E>
      *
      * @param e element to be appended to this list
      * @return <tt>true</tt> (as specified by {@link Collection#add})
+     * 添加元素
      */
     public boolean add(E e) {
+        // 这里保证动态扩容
         ensureCapacityInternal(size + 1);  // Increments modCount!!
         elementData[size++] = e;
         return true;

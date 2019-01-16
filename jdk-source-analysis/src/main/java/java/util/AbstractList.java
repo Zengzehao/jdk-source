@@ -73,6 +73,9 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
      * Sole constructor.  (For invocation by subclass constructors, typically
      * implicit.)
      */
+    /**
+     * 唯一的构造函数，给子类调用的
+     */
     protected AbstractList() {
     }
 
@@ -103,6 +106,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
      *         list does not permit null elements
      * @throws IllegalArgumentException if some property of this element
      *         prevents it from being added to this list
+     * 添加元素
      */
     public boolean add(E e) {
         add(size(), e);
@@ -113,6 +117,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
      * {@inheritDoc}
      *
      * @throws IndexOutOfBoundsException {@inheritDoc}
+     * 获得元素，子类实现
      */
     abstract public E get(int index);
 
@@ -143,6 +148,7 @@ public abstract class AbstractList<E> extends AbstractCollection<E> implements L
      * @throws NullPointerException          {@inheritDoc}
      * @throws IllegalArgumentException      {@inheritDoc}
      * @throws IndexOutOfBoundsException     {@inheritDoc}
+     * 由子类去实现
      */
     public void add(int index, E element) {
         throw new UnsupportedOperationException();

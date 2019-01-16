@@ -108,6 +108,10 @@ import java.util.function.UnaryOperator;
  * @since 1.2
  */
 
+/**
+ * List接口
+ * @param <E>
+ */
 public interface List<E> extends Collection<E> {
     // Query Operations
 
@@ -117,6 +121,7 @@ public interface List<E> extends Collection<E> {
      * <tt>Integer.MAX_VALUE</tt>.
      *
      * @return the number of elements in this list
+     * 长度
      */
     int size();
 
@@ -124,6 +129,7 @@ public interface List<E> extends Collection<E> {
      * Returns <tt>true</tt> if this list contains no elements.
      *
      * @return <tt>true</tt> if this list contains no elements
+     * 是否为空
      */
     boolean isEmpty();
 
@@ -141,6 +147,7 @@ public interface List<E> extends Collection<E> {
      * @throws NullPointerException if the specified element is null and this
      *         list does not permit null elements
      * (<a href="Collection.html#optional-restrictions">optional</a>)
+     * 是否包含某个元素
      */
     boolean contains(Object o);
 
@@ -148,6 +155,7 @@ public interface List<E> extends Collection<E> {
      * Returns an iterator over the elements in this list in proper sequence.
      *
      * @return an iterator over the elements in this list in proper sequence
+     * 返回一个迭代器
      */
     Iterator<E> iterator();
 
@@ -166,6 +174,7 @@ public interface List<E> extends Collection<E> {
      * @return an array containing all of the elements in this list in proper
      *         sequence
      * @see Arrays#asList(Object[])
+     * 转化为数组对象
      */
     Object[] toArray();
 
@@ -207,6 +216,7 @@ public interface List<E> extends Collection<E> {
      *         is not a supertype of the runtime type of every element in
      *         this list
      * @throws NullPointerException if the specified array is null
+     * 转化为对应泛型的数组
      */
     <T> T[] toArray(T[] a);
 
@@ -234,6 +244,7 @@ public interface List<E> extends Collection<E> {
      *         list does not permit null elements
      * @throws IllegalArgumentException if some property of this element
      *         prevents it from being added to this list
+     * 添加元素
      */
     boolean add(E e);
 
@@ -257,6 +268,7 @@ public interface List<E> extends Collection<E> {
      * (<a href="Collection.html#optional-restrictions">optional</a>)
      * @throws UnsupportedOperationException if the <tt>remove</tt> operation
      *         is not supported by this list
+     * 移除元素
      */
     boolean remove(Object o);
 
@@ -280,6 +292,7 @@ public interface List<E> extends Collection<E> {
      *         (<a href="Collection.html#optional-restrictions">optional</a>),
      *         or if the specified collection is null
      * @see #contains(Object)
+     * 是否包含某个集合
      */
     boolean containsAll(Collection<?> c);
 
@@ -303,6 +316,7 @@ public interface List<E> extends Collection<E> {
      * @throws IllegalArgumentException if some property of an element of the
      *         specified collection prevents it from being added to this list
      * @see #add(Object)
+     * 添加一个集合
      */
     boolean addAll(Collection<? extends E> c);
 
@@ -352,6 +366,7 @@ public interface List<E> extends Collection<E> {
      *         or if the specified collection is null
      * @see #remove(Object)
      * @see #contains(Object)
+     * 移除一个集合
      */
     boolean removeAll(Collection<?> c);
 
@@ -471,6 +486,7 @@ public interface List<E> extends Collection<E> {
      *         if the comparator is found to violate the {@link Comparator}
      *         contract
      * @since 1.8
+     * 排序
      */
     @SuppressWarnings({"unchecked", "rawtypes"})
     default void sort(Comparator<? super E> c) {
@@ -489,6 +505,7 @@ public interface List<E> extends Collection<E> {
      *
      * @throws UnsupportedOperationException if the <tt>clear</tt> operation
      *         is not supported by this list
+     * 清空
      */
     void clear();
 
@@ -540,6 +557,7 @@ public interface List<E> extends Collection<E> {
      * @return the element at the specified position in this list
      * @throws IndexOutOfBoundsException if the index is out of range
      *         (<tt>index &lt; 0 || index &gt;= size()</tt>)
+     *获取元素
      */
     E get(int index);
 
@@ -560,6 +578,7 @@ public interface List<E> extends Collection<E> {
      *         element prevents it from being added to this list
      * @throws IndexOutOfBoundsException if the index is out of range
      *         (<tt>index &lt; 0 || index &gt;= size()</tt>)
+     * 设置元素
      */
     E set(int index, E element);
 
@@ -581,6 +600,7 @@ public interface List<E> extends Collection<E> {
      *         element prevents it from being added to this list
      * @throws IndexOutOfBoundsException if the index is out of range
      *         (<tt>index &lt; 0 || index &gt; size()</tt>)
+     * 添加元素
      */
     void add(int index, E element);
 
