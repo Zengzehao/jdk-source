@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b32fb16d-ccf9-4d31-a34e-9b0d70c57f09" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Queue.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/AbstractQueue.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/AbstractQueue.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/jdk-source-analysis/target/" />
@@ -15,30 +15,6 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/List.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="212">
-              <caret line="584" column="9" selection-start-line="584" selection-start-column="9" selection-end-line="584" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/AbstractList.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="99">
-              <caret line="618" column="13" selection-start-line="618" selection-start-column="6" selection-end-line="618" selection-end-column="13" />
-              <folding>
-                <element signature="e#4990#4991#0" expanded="true" />
-                <element signature="e#5047#5048#0" expanded="true" />
-                <element signature="e#9661#9662#0" expanded="true" />
-                <element signature="e#9693#9694#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/ArrayList.java">
           <provider selected="true" editor-type-id="text-editor">
@@ -88,11 +64,38 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Queue.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2464">
-              <caret line="221" column="7" lean-forward="true" selection-start-line="221" selection-start-column="7" selection-end-line="221" selection-end-column="7" />
+            <state relative-caret-position="365">
+              <caret line="200" column="31" lean-forward="true" selection-start-line="200" selection-start-column="7" selection-end-line="200" selection-end-column="31" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/AbstractQueue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-6">
+              <caret line="119" column="23" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Queue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="383">
+              <caret line="180" column="12" selection-start-line="180" selection-start-column="12" selection-end-line="180" selection-end-column="12" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/AbstractCollection.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="193">
+              <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
             </state>
           </provider>
         </entry>
@@ -115,15 +118,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="219">
               <caret line="206" column="13" selection-start-line="206" selection-start-column="13" selection-end-line="206" selection-end-column="13" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/AbstractCollection.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="219">
-              <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -199,6 +193,7 @@
         <option value="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/AbstractList.java" />
         <option value="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/ArrayList.java" />
         <option value="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Queue.java" />
+        <option value="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/AbstractQueue.java" />
       </list>
     </option>
   </component>
@@ -407,6 +402,14 @@
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="lang" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="jdk-source" type="b2602c69:ProjectViewProjectNode" />
+              <item name="External Libraries" type="cb654da1:ExternalLibrariesNode" />
+              <item name="&lt; 1.8 &gt;" type="70bed36:NamedLibraryElementNode" />
+              <item name="rt.jar" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="util" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -417,7 +420,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547697913878" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547807221168" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/jdk-source-analysis/src/main/java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -543,7 +546,7 @@
       <workItem from="1546488335219" duration="8770000" />
       <workItem from="1546567449946" duration="12712000" />
       <workItem from="1546910792673" duration="233000" />
-      <workItem from="1547612240015" duration="6823000" />
+      <workItem from="1547612240015" duration="7067000" />
     </task>
     <task id="LOCAL-00001" summary="覆盖注解，用于覆盖父类的方法">
       <created>1546437502264</created>
@@ -658,7 +661,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="43475000" />
+    <option name="totallyTimeSpent" value="43719000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -673,7 +676,7 @@
     <frame x="0" y="23" width="1440" height="805" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2081545" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2081545" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -690,7 +693,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13323984" />
+      <window_info anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13323984" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32954547" />
       <window_info anchor="bottom" id="JProfiler" order="13" weight="0.042613637" />
@@ -756,24 +759,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/lang/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="117594">
-          <caret line="6647" column="17" selection-start-line="6647" selection-start-column="17" selection-end-line="6647" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/lang/Byte.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="336">
-          <caret line="518" column="28" selection-start-line="518" selection-start-column="28" selection-end-line="518" selection-end-column="28" />
-          <folding>
-            <element signature="e#12540#12541#0" expanded="true" />
-            <element signature="e#12575#12576#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/lang/ApplicationShutdownHooks.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="162">
@@ -1112,13 +1097,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/AbstractCollection.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="219">
-          <caret line="77" column="24" selection-start-line="77" selection-start-column="24" selection-end-line="77" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/List.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="212">
@@ -1211,10 +1189,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/AbstractCollection.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="193">
+          <caret line="60" column="22" selection-start-line="60" selection-start-column="22" selection-end-line="60" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_191.jdk/Contents/Home/src.zip!/java/util/Queue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="383">
+          <caret line="180" column="12" selection-start-line="180" selection-start-column="12" selection-end-line="180" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Queue.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2464">
-          <caret line="221" column="7" lean-forward="true" selection-start-line="221" selection-start-column="7" selection-end-line="221" selection-end-column="7" />
+        <state relative-caret-position="365">
+          <caret line="200" column="31" lean-forward="true" selection-start-line="200" selection-start-column="7" selection-end-line="200" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/AbstractQueue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-6">
+          <caret line="119" column="23" selection-start-line="119" selection-start-column="23" selection-end-line="119" selection-end-column="23" />
         </state>
       </provider>
     </entry>

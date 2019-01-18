@@ -67,6 +67,7 @@ public abstract class AbstractQueue<E>
 
     /**
      * Constructor for use by subclasses.
+     * 给子类的构造函数
      */
     protected AbstractQueue() {
     }
@@ -76,6 +77,8 @@ public abstract class AbstractQueue<E>
      * immediately without violating capacity restrictions, returning
      * <tt>true</tt> upon success and throwing an <tt>IllegalStateException</tt>
      * if no space is currently available.
+     * 插入一个具体的元素到队列中如果没有超过容量限制并且返回true。
+     * 如果没有队列已满则抛出IllegalStateException
      *
      * <p>This implementation returns <tt>true</tt> if <tt>offer</tt> succeeds,
      * else throws an <tt>IllegalStateException</tt>.
@@ -90,8 +93,11 @@ public abstract class AbstractQueue<E>
      *         this queue does not permit null elements
      * @throws IllegalArgumentException if some property of this element
      *         prevents it from being added to this queue
+     * 添加元素，如果添加成功则返回true，如果队列是满的，则抛出异常
+     *
      */
     public boolean add(E e) {
+        // offer由子类去实现
         if (offer(e))
             return true;
         else
@@ -108,8 +114,10 @@ public abstract class AbstractQueue<E>
      *
      * @return the head of this queue
      * @throws NoSuchElementException if this queue is empty
+     * 移除队列头的元素并且返回，如果队列为空则抛出异常
      */
     public E remove() {
+        // poll()有子类去实现
         E x = poll();
         if (x != null)
             return x;
@@ -127,6 +135,7 @@ public abstract class AbstractQueue<E>
      *
      * @return the head of this queue
      * @throws NoSuchElementException if this queue is empty
+     * 返回队列头元素但不移除，如果队列为空，则抛出异常
      */
     public E element() {
         E x = peek();
@@ -142,6 +151,7 @@ public abstract class AbstractQueue<E>
      *
      * <p>This implementation repeatedly invokes {@link #poll poll} until it
      * returns <tt>null</tt>.
+     * 清空队列
      */
     public void clear() {
         while (poll() != null)
@@ -176,6 +186,7 @@ public abstract class AbstractQueue<E>
      * @throws IllegalStateException if not all the elements can be added at
      *         this time due to insertion restrictions
      * @see #add(Object)
+     *
      */
     public boolean addAll(Collection<? extends E> c) {
         if (c == null)
