@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b32fb16d-ccf9-4d31-a34e-9b0d70c57f09" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/jdk-source-test/src/test/java/com/java/util/AbstractListTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jdk-source-test/src/test/java/com/java/util/ForEachGrammerTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jdk-source-test/src/test/java/com/java/util/ForEachTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/AbstractList.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/AbstractList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/ArrayList.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/ArrayList.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/HashMap.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/HashMap.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/List.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/List.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Queue.java" beforeDir="false" afterPath="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Queue.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/target/" />
     <ignored path="$PROJECT_DIR$/jdk-source-analysis/target/" />
@@ -27,19 +20,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="212">
               <caret line="584" column="9" selection-start-line="584" selection-start-column="9" selection-end-line="584" selection-end-column="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/List.java">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="8953">
-              <caret line="602" column="11" selection-start-line="602" selection-start-column="11" selection-end-line="602" selection-end-column="11" />
-              <folding>
-                <element signature="e#33130#33131#0" expanded="true" />
-                <element signature="e#33204#33205#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -99,11 +79,20 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Currency.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="269">
-              <caret line="117" column="32" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+            <state relative-caret-position="180">
+              <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Queue.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="2464">
+              <caret line="221" column="7" lean-forward="true" selection-start-line="221" selection-start-column="7" selection-end-line="221" selection-end-column="7" />
             </state>
           </provider>
         </entry>
@@ -209,6 +198,7 @@
         <option value="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/List.java" />
         <option value="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/AbstractList.java" />
         <option value="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/ArrayList.java" />
+        <option value="$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Queue.java" />
       </list>
     </option>
   </component>
@@ -427,7 +417,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547646189092" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1547697913878" />
     <property name="last_directory_selection" value="$PROJECT_DIR$/jdk-source-analysis/src/main/java" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
@@ -553,7 +543,7 @@
       <workItem from="1546488335219" duration="8770000" />
       <workItem from="1546567449946" duration="12712000" />
       <workItem from="1546910792673" duration="233000" />
-      <workItem from="1547612240015" duration="3965000" />
+      <workItem from="1547612240015" duration="6823000" />
     </task>
     <task id="LOCAL-00001" summary="覆盖注解，用于覆盖父类的方法">
       <created>1546437502264</created>
@@ -668,7 +658,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="40617000" />
+    <option name="totallyTimeSpent" value="43475000" />
   </component>
   <component name="TodoView" selected-index="1">
     <todo-panel id="selected-file">
@@ -683,7 +673,7 @@
     <frame x="0" y="23" width="1440" height="805" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.42703864" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2081545" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -696,11 +686,11 @@
       <window_info anchor="bottom" id="Debug" order="3" weight="0.27349228" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" visible="true" weight="0.042075735" />
+      <window_info anchor="bottom" id="TODO" order="6" weight="0.042075735" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.13323984" />
       <window_info anchor="bottom" id="Event Log" order="11" side_tool="true" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.32954547" />
       <window_info anchor="bottom" id="JProfiler" order="13" weight="0.042613637" />
@@ -766,13 +756,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/math/BigInteger.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="113">
-          <caret line="4254" column="76" lean-forward="true" selection-start-line="4254" selection-start-column="76" selection-end-line="4254" selection-end-column="76" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/lang/Character.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="117594">
@@ -1223,8 +1206,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Currency.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="269">
-          <caret line="117" column="32" selection-start-line="117" selection-start-column="32" selection-end-line="117" selection-end-column="32" />
+        <state relative-caret-position="180">
+          <caret line="50" column="17" selection-start-line="50" selection-start-column="17" selection-end-line="50" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/jdk-source-analysis/src/main/java/java/util/Queue.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2464">
+          <caret line="221" column="7" lean-forward="true" selection-start-line="221" selection-start-column="7" selection-end-line="221" selection-end-column="7" />
         </state>
       </provider>
     </entry>

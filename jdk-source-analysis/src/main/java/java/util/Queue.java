@@ -140,6 +140,7 @@ package java.util;
  * @since 1.5
  * @author Doug Lea
  * @param <E> the type of elements held in this collection
+ * 队列
  */
 public interface Queue<E> extends Collection<E> {
     /**
@@ -147,6 +148,8 @@ public interface Queue<E> extends Collection<E> {
      * immediately without violating capacity restrictions, returning
      * {@code true} upon success and throwing an {@code IllegalStateException}
      * if no space is currently available.
+     * 插入一个具体的元素到队列中如果没有超过容量限制并且返回true。
+     * 如果没有队列已满则抛出IllegalStateException
      *
      * @param e the element to add
      * @return {@code true} (as specified by {@link Collection#add})
@@ -154,10 +157,13 @@ public interface Queue<E> extends Collection<E> {
      *         time due to capacity restrictions
      * @throws ClassCastException if the class of the specified element
      *         prevents it from being added to this queue
+     *         如果插入的对象不对，则会抛出类型转换ClassCastException
      * @throws NullPointerException if the specified element is null and
      *         this queue does not permit null elements
+     *         如果插入null，则会抛出空指针异常
      * @throws IllegalArgumentException if some property of this element
      *         prevents it from being added to this queue
+     * 添加元素，如果添加成功则返回true，如果队列是满的，则抛出异常
      */
     boolean add(E e);
 
@@ -167,6 +173,10 @@ public interface Queue<E> extends Collection<E> {
      * When using a capacity-restricted queue, this method is generally
      * preferable to {@link #add}, which can fail to insert an element only
      * by throwing an exception.
+     * 插入一个具体的元素到队列中如果没有超过容量限制并且返回true。
+     * 如果没有队列已满则返回false。
+     * 当使用一个有容量限制的队列时，建议使用该方法offer(),因为使用add()方法当队列满时会
+     * 直接抛出异常，则offer()方法则返回false
      *
      * @param e the element to add
      * @return {@code true} if the element was added to this queue, else
@@ -177,6 +187,7 @@ public interface Queue<E> extends Collection<E> {
      *         this queue does not permit null elements
      * @throws IllegalArgumentException if some property of this element
      *         prevents it from being added to this queue
+     * 添加元素，如果添加成功则返回true，如果队列是满的，则返回false
      */
     boolean offer(E e);
 
@@ -187,6 +198,7 @@ public interface Queue<E> extends Collection<E> {
      *
      * @return the head of this queue
      * @throws NoSuchElementException if this queue is empty
+     * 移除队列头的元素并且返回，如果队列为空则抛出异常
      */
     E remove();
 
@@ -195,6 +207,7 @@ public interface Queue<E> extends Collection<E> {
      * or returns {@code null} if this queue is empty.
      *
      * @return the head of this queue, or {@code null} if this queue is empty
+     * 移除队列头的元素并且返回，如果队列为空则返回null
      */
     E poll();
 
@@ -205,6 +218,7 @@ public interface Queue<E> extends Collection<E> {
      *
      * @return the head of this queue
      * @throws NoSuchElementException if this queue is empty
+     * 返回队列头元素但不移除，如果队列为空，则抛出异常
      */
     E element();
 
@@ -213,6 +227,7 @@ public interface Queue<E> extends Collection<E> {
      * or returns {@code null} if this queue is empty.
      *
      * @return the head of this queue, or {@code null} if this queue is empty
+     * 返回队列头元素但不移除，如果队列为空，则返回null
      */
     E peek();
 }
