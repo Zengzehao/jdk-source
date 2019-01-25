@@ -37,6 +37,7 @@ import sun.misc.SharedSecrets;
  * A priority queue relying on natural ordering also does not permit
  * insertion of non-comparable objects (doing so may result in
  * {@code ClassCastException}).
+ * 一个没有边界的优先队列是基于而叉堆
  *
  * <p>The <em>head</em> of this queue is the <em>least</em> element
  * with respect to the specified ordering.  If multiple elements are
@@ -44,6 +45,7 @@ import sun.misc.SharedSecrets;
  * broken arbitrarily.  The queue retrieval operations {@code poll},
  * {@code remove}, {@code peek}, and {@code element} access the
  * element at the head of the queue.
+ *
  *
  * <p>A priority queue is unbounded, but has an internal
  * <i>capacity</i> governing the size of an array used to store the
@@ -105,12 +107,14 @@ public class PriorityQueue<E> extends AbstractQueue<E>
     /**
      * The comparator, or null if priority queue uses elements'
      * natural ordering.
+     * 比较器
      */
     private final Comparator<? super E> comparator;
 
     /**
      * The number of times this priority queue has been
      * <i>structurally modified</i>.  See AbstractList for gory details.
+     * 修改数量
      */
     transient int modCount = 0; // non-private to simplify nested class access
 
@@ -118,6 +122,7 @@ public class PriorityQueue<E> extends AbstractQueue<E>
      * Creates a {@code PriorityQueue} with the default initial
      * capacity (11) that orders its elements according to their
      * {@linkplain Comparable natural ordering}.
+     * 构造函数
      */
     public PriorityQueue() {
         this(DEFAULT_INITIAL_CAPACITY, null);
@@ -177,6 +182,8 @@ public class PriorityQueue<E> extends AbstractQueue<E>
      * priority queue will be ordered according to the same ordering.
      * Otherwise, this priority queue will be ordered according to the
      * {@linkplain Comparable natural ordering} of its elements.
+     * 创建一个包含元素的优先队列。如果集合是一个SortedSet或者另外一个优先队列，
+     * 则按照原来的顺序，否则，优先队列则会根据比较器来排序
      *
      * @param  c the collection whose elements are to be placed
      *         into this priority queue
@@ -243,6 +250,10 @@ public class PriorityQueue<E> extends AbstractQueue<E>
         initElementsFromCollection(c);
     }
 
+    /**
+     * 初始化从一个优先队列
+     * @param c
+     */
     private void initFromPriorityQueue(PriorityQueue<? extends E> c) {
         if (c.getClass() == PriorityQueue.class) {
             this.queue = c.toArray();
@@ -252,6 +263,10 @@ public class PriorityQueue<E> extends AbstractQueue<E>
         }
     }
 
+    /**
+     * 初始化元素从已经排好序的一个集合
+     * @param c
+     */
     private void initElementsFromCollection(Collection<? extends E> c) {
         Object[] a = c.toArray();
         // If c.toArray incorrectly doesn't return Object[], copy it.
@@ -324,6 +339,7 @@ public class PriorityQueue<E> extends AbstractQueue<E>
 
     /**
      * Inserts the specified element into this priority queue.
+     * 插入具体的元素到优先队列中
      *
      * @return {@code true} (as specified by {@link Queue#offer})
      * @throws ClassCastException if the specified element cannot be
@@ -346,6 +362,10 @@ public class PriorityQueue<E> extends AbstractQueue<E>
         return true;
     }
 
+    /**
+     * 取出一个元素，没有则返回null
+     * @return
+     */
     @SuppressWarnings("unchecked")
     public E peek() {
         return (size == 0) ? null : (E) queue[0];
@@ -614,6 +634,7 @@ public class PriorityQueue<E> extends AbstractQueue<E>
         // assert i >= 0 && i < size;
         modCount++;
         int s = --size;
+        // 如果是最后一个元素
         if (s == i) // removed last element
             queue[i] = null;
         else {
@@ -637,6 +658,7 @@ public class PriorityQueue<E> extends AbstractQueue<E>
      * To simplify and speed up coercions and comparisons. the
      * Comparable and Comparator versions are separated into different
      * methods that are otherwise identical. (Similarly for siftDown.)
+     *
      *
      * @param k the position to fill
      * @param x the item to insert
@@ -665,10 +687,12 @@ public class PriorityQueue<E> extends AbstractQueue<E>
     @SuppressWarnings("unchecked")
     private void siftUpUsingComparator(int k, E x) {
         while (k > 0) {
+            // 取出父类的位置
             int parent = (k - 1) >>> 1;
             Object e = queue[parent];
+            // 比较
             if (comparator.compare(x, (E) e) >= 0)
-                break;
+                break; //退出循环
             queue[k] = e;
             k = parent;
         }
@@ -679,6 +703,7 @@ public class PriorityQueue<E> extends AbstractQueue<E>
      * Inserts item x at position k, maintaining heap invariant by
      * demoting x down the tree repeatedly until it is less than or
      * equal to its children or is a leaf.
+     * 插入位置k插入元素x，保持堆不变。反复将x降级到树的字节点或叶子节点
      *
      * @param k the position to fill
      * @param x the item to insert
@@ -730,6 +755,7 @@ public class PriorityQueue<E> extends AbstractQueue<E>
     /**
      * Establishes the heap invariant (described above) in the entire tree,
      * assuming nothing about the order of the elements prior to the call.
+     *
      */
     @SuppressWarnings("unchecked")
     private void heapify() {
